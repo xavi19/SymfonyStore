@@ -39,12 +39,35 @@ class ProductRepository extends ServiceEntityRepository
     /*
     public function findOneBySomeField($value): ?Product
     {
+         $entityManager = $this->getEntityManager();
+
+        $query = $entityManager->createQuery(
+            'SELECT p
+            FROM App\Entity\Product p
+            WHERE p.price > :price
+            ORDER BY p.price ASC'
+        )->setParameter('price', 1000);
         return $this->createQueryBuilder('p')
             ->andWhere('p.exampleField = :val')
             ->setParameter('val', $value)
             ->getQuery()
             ->getOneOrNullResult()
         ;
+        //SQL
+           $conn = $this->getEntityManager()->getConnection();
+
+            $sql = '
+                SELECT * FROM product p
+                WHERE p.price > :price
+                ORDER BY p.price ASC
+                ';
+            $stmt = $conn->prepare($sql);
+            $stmt->execute(['price' => 1000]);
+
+            // returns an array of arrays (i.e. a raw data set)
+            return $stmt->fetchAll();
     }
     */
+
+
 }
