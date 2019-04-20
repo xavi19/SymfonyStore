@@ -15,7 +15,7 @@ $ docker-compose up -d
 **Note:** you need to cd first to where your docker-compose.yml file lives.
 ```
 $ docker-compose up -d //Run dockers in background
-$ docker-compose up -d //Stop dockers
+$ docker-compose down //Stop dockers
 $ docker rm --force docker_name //Delete docker
 $ docker-compose exec docker_name bash //Run docker bash
 ```
