@@ -22,7 +22,7 @@ $ docker-compose exec docker_name bash //Run docker bash
 
 ## Configure Doctrine for MySQL database:
 
-**Note:** Configure your envairoment parameters in .env.dist file.
+**Note:** Configure your envairoment parameters in .env.dist file. And for dev in .env. Add this line for access to mysql container: `DATABASE_URL=mysql://dbuser:dbpw@mysql:3306/docker_symfony4`
 * Shell into the PHP container, `docker-compose exec php-fpm bash`
 * Run symfony console and create db, `docker-compose exec php-fpm bin/console doc:sch:crea`
 * Make entities, `docker-compose exec php-fpm bin/console make:entity`
