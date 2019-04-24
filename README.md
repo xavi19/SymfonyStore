@@ -30,6 +30,16 @@ $ docker-compose exec docker_name bash //Run docker bash
 * Make entities IMPORTANT: This can delete data from database, `docker-compose exec php-fpm bin/console make:migrations:migrate`
 * Execute query, `docker-compose exec php-fpm bin/console doctrine:query:sql 'SQL QUERY'`
 
+## Configure Node.js and Yarn package manager:
+* Add node: `curl -sL https://deb.nodesource.com/setup_12.x | bash -` 
+* Install node: `apt-get install -y nodejs`
+* Install yarn:
+    `curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -`
+     `echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list`
+     `sudo apt-get update && sudo apt-get install yarn`
+
+
+
 
 ## &nbsp;
 
